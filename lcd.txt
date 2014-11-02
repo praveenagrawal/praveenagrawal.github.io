@@ -1,0 +1,394 @@
+module slcd(rs,rw,en,clk,lcdData);
+    input clk;
+	 output reg rs,rw,en;
+	 output reg [7:0]lcdData;
+	 reg [5:0]state;  
+	 
+	 initial begin
+	 state = 6'b0;
+	 end
+	 
+	 always @(posedge clk)
+	 begin
+	 
+	 if (state == 6'd0)
+	 begin
+	 lcdData <=8'b00111000; //command 38 given
+	 rs<=1'b0;
+	 rw<=1'b0;
+	 en<=1'b0;
+	 state<=state+1;
+	 end
+	 
+	 else if (state == 6'd1)
+	 begin
+	 lcdData <=8'b00111000;
+	 rs<=1'b0;
+	 rw<=1'b0;
+	 en<=1'b1;
+	 state<=state+1;
+	 end
+	 
+	  else if (state == 6'd2)
+	 begin
+	 lcdData <=8'b00111000;
+	 rs<=1'b0;
+	 rw<=1'b0;
+	 en<=1'b0;
+	 state<=state+1;
+	 end
+	 
+	  else if (state == 6'd3)
+	 begin
+	 lcdData <=8'b00000001;
+	 rs<=1'b0;
+	 rw<=1'b0;
+	 en<=1'b0;
+	 state<=state+1;
+	 end
+	 
+	  
+	  else if (state == 6'd4)
+	 begin
+	 lcdData <=8'b00000001;
+	 rs<=1'b0;
+	 rw<=1'b0;
+	 en<=1'b1;
+	 state<=state+1;
+	 end
+	 
+	  
+	  else if (state == 6'd5)
+	 begin
+	 lcdData <=8'b00000001;
+	 rs<=1'b0;
+	 rw<=1'b0;
+	 en<=1'b0;
+	 state<=state+1;
+	 end
+	 
+	
+	   else if (state == 6'd6)
+	 begin
+	 lcdData <=8'b00001110;
+	 rs<=1'b0;
+	 rw<=1'b0;
+	 en<=1'b0;
+	 state<=state+1;
+	 end
+	 
+	   else if (state == 6'd7)
+	 begin
+	 lcdData <=8'b00001110;
+	 rs<=1'b0;
+	 rw<=1'b0;
+	 en<=1'b1;
+	 state<=state+1;
+	 end
+	 
+	   else if (state == 6'd8)
+	 begin
+	 lcdData <=8'b00001110;
+	 rs<=1'b0;
+	 rw<=1'b0;
+	 en<=1'b0;
+	 state<=state+1;
+	 end
+	 
+	 
+	   else if (state == 6'd9)
+	 begin
+	 lcdData <=8'b10000000;
+	 rs<=1'b0;
+	 rw<=1'b0;
+	 en<=1'b0;
+	 state<=state+1;
+	 end
+
+	   else if (state == 6'd10)
+	 begin
+	 lcdData <=8'b10000000;
+	 rs<=1'b0;
+	 rw<=1'b0;
+	 en<=1'b1;
+	 state<=state+1;
+	 end	 
+	 
+	   else if (state == 6'd11)
+	 begin
+	 lcdData <=8'b10000000;
+	 rs<=1'b0;
+	 rw<=1'b0;
+	 en<=1'b0;
+	 state<=state+1;
+	 end
+	 
+	 
+	 else if (state == 6'd12)
+	 begin
+	 lcdData <=8'b00000110;
+	 rs<=1'b0;
+	 rw<=1'b0;
+	 en<=1'b0;
+	 state<=state+1;
+	 end
+	 else if (state == 6'd13)
+	 begin
+	 lcdData <=8'b00000110;
+	 rs<=1'b0;
+	 rw<=1'b0;
+	 en<=1'b1;
+	 state<=state+1;
+	 end
+	 else if (state == 6'd14)
+	 begin
+	 lcdData <=8'b00000110;
+	 rs<=1'b0;
+	 rw<=1'b0;
+	 en<=1'b0;
+	 state<=state+1;
+	 end
+	 
+	 
+	 else if (state == 6'd15)
+	 begin
+	 lcdData <=8'h50;  //P
+	 rs<=1'b1;
+	 rw<=1'b0;
+	 en<=1'b0;
+	 state<=state+1;
+	 end
+	 else if (state == 6'd16)
+	 begin
+	 lcdData <=8'h50;  
+	 rs<=1'b1;
+	 rw<=1'b0;
+	 en<=1'b1;
+	 state<=state+1;
+	 end
+	 else if (state == 6'd17)
+	 begin
+	 lcdData <=8'h50;  
+	 rs<=1'b1;
+	 rw<=1'b0;
+	 en<=1'b0;
+	 state<=state+1;
+	 end
+	 
+	 else if (state == 6'd18)
+	 begin
+	 lcdData <=8'h52;  //R
+	 rs<=1'b1;
+	 rw<=1'b0;
+	 en<=1'b0;
+	 state<=state+1;
+	 end
+	  else if (state == 6'd19)
+	 begin
+	 lcdData <=8'h52; 
+	 rs<=1'b1;
+	 rw<=1'b0;
+	 en<=1'b1;
+	 state<=state+1;
+	 end
+	  else if (state == 6'd20)
+	 begin
+	 lcdData <=8'h52;  
+	 rs<=1'b1;
+	 rw<=1'b0;
+	 en<=1'b0;
+	 state<=state+1;
+	 end
+	 
+	 
+	   else if (state == 6'd21)
+	 begin
+	 lcdData <=8'h41; //A
+	 rs<=1'b1;
+	 rw<=1'b0;
+	 en<=1'b0;
+	 state<=state+1;
+	 end
+	 
+	   else if (state == 6'd22)
+	 begin
+	 lcdData <=8'h41;
+	 rs<=1'b1;
+	 rw<=1'b0;
+	 en<=1'b1;
+	 state<=state+1;
+	 end
+	 
+	   else if (state == 6'd23)
+	 begin
+	 lcdData <=8'h41; 
+	 rs<=1'b1;
+	 rw<=1'b0;
+	 en<=1'b0;
+	 state<=state+1;
+	 end
+	 
+	    else if (state == 6'd24)
+	 begin
+	 lcdData <=8'h56; //V
+	 rs<=1'b1;
+	 rw<=1'b0;
+	 en<=1'b0;
+	 state<=state+1;
+	 end
+	 else if (state == 6'd25)
+	 begin
+	 lcdData <=8'h56; 
+	 rs<=1'b1;
+	 rw<=1'b0;
+	 en<=1'b1;
+	 state<=state+1;
+	 end
+	 else if (state == 6'd26)
+	 begin
+	 lcdData <=8'h56; 
+	 rs<=1'b1;
+	 rw<=1'b0;
+	 en<=1'b0;
+	 state<=state+1;
+	 end
+	 
+	 
+	  else if (state == 6'd27)
+	 begin
+	 lcdData <=8'h45; //E
+	 rs<=1'b1;
+	 rw<=1'b0;
+	 en<=1'b0;
+	 state<=state+1;
+	 end
+	 else if (state == 6'd28)
+	 begin
+	 lcdData <=8'h45; 
+	 rs<=1'b1;
+	 rw<=1'b0;
+	 en<=1'b1;
+	 state<=state+1;
+	 end
+	 else if (state == 6'd29)
+	 begin
+	 lcdData <=8'h45; 
+	 rs<=1'b1;
+	 rw<=1'b0;
+	 en<=1'b0;
+	 state<=state+1;
+	 end
+	 
+	 
+	 	 else if (state == 6'd30)
+	 begin
+	 lcdData <=8'h45; //E
+	 rs<=1'b1;
+	 rw<=1'b0;
+	 en<=1'b0;
+	 state<=state+1;
+	 end
+	 	 else if (state == 6'd31)
+	 begin
+	 lcdData <=8'h45; 
+	 rs<=1'b1;
+	 rw<=1'b0;
+	 en<=1'b1;
+	 state<=state+1;
+	 end
+	 	 else if (state == 6'd32)
+	 begin
+	 lcdData <=8'h45; 
+	 rs<=1'b1;
+	 rw<=1'b0;
+	 en<=1'b0;
+	 state<=state+1;
+	 end
+	 
+	 
+	  else if (state == 6'd33)
+	 begin
+	 lcdData <=8'h4e; //N
+	 rs<=1'b1;
+	 rw<=1'b0;
+	 en<=1'b0;
+	 state<=state+1;
+	 end
+	 	 else if (state == 6'd34)
+	 begin
+	 lcdData <=8'h4e; 
+	 rs<=1'b1;
+	 rw<=1'b0;
+	 en<=1'b1;
+	 state<=state+1;
+	 end
+	 	 else if (state == 6'd35)
+	 begin
+	 lcdData <=8'h4e; 
+	 rs<=1'b1;
+	 rw<=1'b0;
+	 en<=1'b0;
+	 state<=state+1;
+	 end
+	 
+	 
+	 
+	
+  else if (state == 6'd36)
+	 begin
+	 lcdData <=8'b00000011; //home
+	 rs<=1'b0;
+	 rw<=1'b0;
+	 en<=1'b0;
+	 state<=state+1;
+	 end
+	 	 else if (state == 6'd37)
+	 begin
+	 lcdData <=8'b00000011; 
+	 rs<=1'b0;
+	 rw<=1'b0;
+	 en<=1'b1;
+	 state<=state+1;
+	 end
+	 	 else if (state == 6'd38)
+	 begin
+	 lcdData <=8'b00000011; 
+	 rs<=1'b0;
+	 rw<=1'b0;
+	 en<=1'b0;
+	 state<=state+1;
+	 end
+	 
+	
+	  else if (state == 6'd39)
+	 begin
+	 lcdData <=8'b00011111; //shift
+	 rs<=1'b0;
+	 rw<=1'b0;
+	 en<=1'b0;
+	 state<=state+1;
+	 end
+	 	 else if (state == 6'd40)
+	 begin
+	 lcdData <=8'b00011111; 
+	 rs<=1'b0;
+	 rw<=1'b0;
+	 en<=1'b1;
+	 state<=state+1;
+	 end
+	 	 else if (state == 6'd41)
+	 begin
+	 lcdData <=8'b00011111; 
+	 rs<=1'b0;
+	 rw<=1'b0;
+	 en<=1'b0;
+	 state<=state+1;
+	 end
+	 
+	
+	 
+	 else if(state == 6'd42)state<=6'd39;
+	 
+	 
+	 end
+	 endmodule  

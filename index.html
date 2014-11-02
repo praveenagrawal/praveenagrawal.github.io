@@ -1,17 +1,100 @@
-<html>
-<head>
-	<title>Praveen Agrawal</title>
-</head>
-<body>
-	<h1>Praveen Agrawal's Homepage</h1>
-	<p>
-		Hi! I am Praveen Agrawal , a 3rd year Undergraduate , Electrical Engineering Department , IIT Bomabay
-	</p>
-	<p>
-		<a href="resume.pdf">Click here to download my resume </a>
-	</p>
-	<p>
-		Or go to my <a href="https://www.facebook.com/praveen.agrawal.1441">Facebook Profile</a>
-	</p>
-<body>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="title" content="Praveen Agrawal's Homepage" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hello! This is Praveen Agrawal, a third year undergraduate from IIT Bombay and welcome to my official webpage.">
+    <meta name="author" content="Praveen Agrawal">
+    <meta name="keywords" content="Praveen Agrawal, praveen, Praveen, Agrawal, agrawal, IIT, iit, IITB, Electrical, elec, elec iitb, EE, iit bombay, PRAVEEN, AGRAWAL, PRAVEEN AGRAWAL, IIT Bombay,ee">
+    <meta property="og:image" width="200" height="200" content="img/praveen.jpg">
+    <meta property="og:title" content="Praveen Agrawal's Homepage">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="index.html">
+    <meta property="og:description" content="Hello! This is Praveen Agrawal, a second year undergraduate IIT Bombay and welcome to my official webpage.">
+    <meta itemprop="name" content="Praveen Agrawal's Homepage">
+    <meta itemprop="description" content="Hello! This is Praveen Agrawal, a second year undergraduate IIT Bombay and welcome to my official webpage.">
+    <meta itemprop="image" width="200" height="200" content="img/praveen.jpg">
+    <title>Praveen Agrawal | Home</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+  <link rel="shortcut icon" href="img/praveen.ico" />
+    <!-- Add custom CSS here -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  </head>
+  <body>
+  
+    <div id="wrapper">
+      
+      <!-- Sidebar -->
+      <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+          <li class="sidebar-brand"><a href="index.html">Praveen Agrawal</a></li>
+          <li><a href="aboutme.html">About Me</a></li>
+          <li><a href="academics.html">Academics</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="internships.html">Internships</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="http://home.iitb.ac.in/~praveen.agrawal/resume.pdf" target="_blank">Resume</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+          
+      <!-- Page content -->
+      <div id="page-content-wrapper">
+        <div class="content-header", align ="center">
+          <h1><b>
+            <a id="menu-toggle" href="#" class="btn btn-default"><i class="icon-reorder"></i></a>
+            Praveen Agrawal's Homepage</b>
+          </h1>
+        </div>
+        <hr class="featurette">
+
+        <!-- Keep all page content within the page-content inset div! -->
+        <div class="page-content inset">
+
+
+      <!-- Page Code starts here . . . . .  -->
+          <div class="row">
+                 <div class="col-md-12">
+                      <img src="img/praveen.jpg" alt="Praveen Agrawal" width="200" height="200" style="border:2px solid gray; padding:4px; margin-left:20px; margin-right:20px; box-shadow:0px 1px 3px; rgba(0,0,0,0.1)" class="pull-left img-polaroid"/>
+                      <p class="lead">Hello all!  This is Praveen Agrawal from <a href ="http://en.wikipedia.org/wiki/Dumka" target="_blank"> Dumka</a>, a town in the state of Jharkhand, India. Currently I am pursuing B.Tech + M.Tech (Dual degee) in Electrical Engineering from Indian Institute of Technology Bombay (<a href ="http://www.iitb.ac.in/" target="_blank">IIT Bombay</a>). I am currently in third year and will be graduating in June, 2017.</p>
+                      <p class="lead">This page contains many informations regarding me including my contacts and also various details about the projects undertaken by me.</p>
+                 </div>
+                 <hr class="featurette">
+                 <div class="col-md-4"><div class = "well">
+                        <h2 style="text-align:center"><a href="aboutme.html" target="_blank">About Me</a></h2>
+                        <p class="lead">Contains relevant details about me.</p>
+                 </div></div>
+                 <div class="col-md-4"><div class = "well">
+                        <h2 style="text-align:center"><a href="http://home.iitb.ac.in/~praveen.agrawal/resume.pdf" target="_blank">Curriculum Vitae</a></h2>
+                        <p class="lead">View my resume/CV from this link.</p>
+                 </div></div>
+                 <div class="col-md-4"><div class = "well">
+                        <h2 style="text-align:center"><a href="contact.html" target="_blank">Contact</a></h2>
+                        <p class="lead">My contact details in case you want to reach me.</p>
+                 </div></div>
+                        <footer>
+                          <hr class="featurette">
+                                <p>&copy; Praveen Agrawal, 2013. Designed using <a href="http://getbootstrap.com/" target="_blank">Bootstrap</a></p>
+                        </footer>
+          </div>
+     </div>
+</div>
+      	
+    <!-- JavaScript -->
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/bootstrap.js"></script>
+
+    <!-- Custom JavaScript for the Menu Toggle -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("active");
+    });
+    </script>
+  </body>
 </html>
